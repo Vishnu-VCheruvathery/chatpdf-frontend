@@ -28,7 +28,7 @@ const Conversation = () => {
 
     async function getMessages() {
       try {
-        const response = await api.post(`/users/messages?id=${id}`)
+        const response = await api.get(`/users/messages?id=${id}`)
         console.log(response.data)
         setMessages(response.data)
       } catch (error) {
