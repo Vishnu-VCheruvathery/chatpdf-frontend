@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.tooltip-white::before {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #ccc; /* optional */
+}
