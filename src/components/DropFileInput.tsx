@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './drop-fileInput.css'
 import { ImageConfig } from './ImageConfig';
 import { socket } from '../socket';
-import axios from 'axios';
+import api from '../../api/instance';
 
 
 interface DropFileInputProps {
@@ -72,7 +72,7 @@ useEffect(() => {
     formData.append('convId', convId!)
   
     try {
-      const response = await axios.post(`http://localhost:3000/api/upload`, formData);
+      const response = await api.post(`/upload`, formData);
       console.log(response.data)
     } catch (error) {
       console.log(error);
