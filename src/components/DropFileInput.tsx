@@ -69,8 +69,11 @@ useEffect(() => {
     if(fileList.length > 0){
        const formData = new FormData();
     formData.append('file', fileList[0])
-    formData.append('convId', convId!)
-  
+    if(convId){
+         formData.append('convId', convId)
+    }else{
+      return
+    }
     try {
       const response = await api.post(`/upload`, formData);
       console.log(response.data)
